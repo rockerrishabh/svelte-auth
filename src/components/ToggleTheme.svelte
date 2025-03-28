@@ -29,6 +29,7 @@
 <!-- Optionally, wrap your toggle in a container that only shows after hydration -->
 {#if hydrated}
 	<button
+		aria-label="Toggle dark mode"
 		on:click={toggleDarkMode}
 		class="transform cursor-pointer transition duration-300 ease-in-out hover:scale-105 active:rotate-45"
 	>
