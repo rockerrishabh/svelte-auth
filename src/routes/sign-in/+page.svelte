@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Blog App</title>
+	<title>Sign In</title>
 </svelte:head>
 
 <main class="mx-auto max-w-md p-8 md:max-w-lg lg:max-w-xl">
@@ -13,7 +13,7 @@
 			<input
 				id="email"
 				type="email"
-				placeholder="you@example.com"
+				placeholder="Your Email Address"
 				required
 				class="mt-1 block w-full rounded-md border border-slate-300 bg-white p-2 text-slate-900 shadow-sm focus:ring-2 focus:ring-sky-500 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
 			/>
