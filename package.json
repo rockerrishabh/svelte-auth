@@ -17,6 +17,7 @@
 		"db:studio": "drizzle-kit studio"
 	},
 	"devDependencies": {
+		"@auth/core": "^0.38.0",
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
 		"@sveltejs/adapter-vercel": "^5.6.3",
@@ -45,8 +46,7 @@
 		"@auth/drizzle-adapter": "^1.8.0",
 		"@auth/sveltekit": "^1.8.0",
 		"@neondatabase/serverless": "^0.10.4",
-		"drizzle-orm": "^0.40.0",
-		"next-auth": "^4.24.11"
+		"drizzle-orm": "^0.40.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [

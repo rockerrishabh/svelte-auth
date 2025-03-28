@@ -1,5 +1,5 @@
 import { boolean, timestamp, pgTable, text, primaryKey, integer } from 'drizzle-orm/pg-core';
-import type { AdapterAccount } from 'next-auth/adapters';
+import type { AdapterAccountType } from '@auth/core/adapters';
 
 export const users = pgTable('user', {
 	id: text('id')
@@ -17,7 +17,7 @@ export const accounts = pgTable(
 		userId: text('userId')
 			.notNull()
 			.references(() => users.id, { onDelete: 'cascade' }),
-		type: text('type').$type<AdapterAccount>().notNull(),
+		type: text('type').$type<AdapterAccountType>().notNull(),
 		provider: text('provider').notNull(),
 		providerAccountId: text('providerAccountId').notNull(),
 		refresh_token: text('refresh_token'),
