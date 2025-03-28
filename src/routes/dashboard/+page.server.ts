@@ -1,14 +1,14 @@
-// import { redirect } from '@sveltejs/kit';
-// import type { ServerLoad } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
-// export const load: ServerLoad = async (events) => {
-// 	const session = await events.locals.auth();
+export const load: PageServerLoad = async (event) => {
+	const session = await event.locals.auth();
 
-// 	if (!session?.user?.id) {
-// 		redirect(303, `/`);
-// 	}
+	if (!session?.user?.id) {
+		return redirect(303, `/`);
+	}
 
-// 	return {
-// 		session
-// 	};
-// };
+	return {
+		session
+	};
+};
