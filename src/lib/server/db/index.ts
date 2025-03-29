@@ -1,14 +1,17 @@
 import { drizzle } from 'drizzle-orm/neon-http';
-import { neon } from '@neondatabase/serverless';
-import * as authSchema from './schemas/auth';
+import * as userSchema from './schemas/users';
+import * as postSchema from './schemas/posts';
+import * as accountsSchema from './schemas/accounts';
+import * as commentsSchema from './schemas/comments';
 import { env } from '$env/dynamic/private';
 
-if (!env.AUTH_DRIZZLE_URL) throw new Error('DATABASE_URL is not set');
+if (!env.DATABASE_URL) throw new Error('DATABASE_URL is not set');
 
-const client = neon(env.AUTH_DRIZZLE_URL);
-
-export const db = drizzle(client, {
+export const db = drizzle(env.DATABASE_URL, {
 	schema: {
-		...authSchema
+		...userSchema,
+		...postSchema,
+		...accountsSchema,
+		...commentsSchema
 	}
 });
